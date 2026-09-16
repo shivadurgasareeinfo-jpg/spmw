@@ -87,15 +87,15 @@ const phoneInput =
   );
 
 
-phoneInput.addEventListener(
-  "input",
-  function () {
+const phoneInput =
+  document.querySelector('input[name="phone"]');
 
-    this.value =
-      this.value.replace(
-        /[^0-9+\-\s()]/g,
-        ""
-      );
-
-  }
+if (phoneInput) {
+  phoneInput.addEventListener("input", function () {
+    this.value = this.value.replace(
+      /[^0-9+\-\s()]/g,
+      ""
+    );
+  });
+}
 );
