@@ -1,0 +1,917 @@
+/* =========================================
+   SP MEDIA WORKS FEEDBACK
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+
+  --orange: #FF6A00;
+  --orange-dark: #e85e00;
+
+  --black: #111111;
+  --dark: #181818;
+
+  --text: #171717;
+  --muted: #707070;
+
+  --border: #e8e8e8;
+
+  --white: #ffffff;
+
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fff8f3 100%
+    );
+
+  color: var(--text);
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+}
+
+
+/* =========================================
+   BACKGROUND
+   ========================================= */
+
+.background-circle {
+
+  position: fixed;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  opacity: 0.5;
+
+}
+
+
+.circle-one {
+
+  width: 420px;
+  height: 420px;
+
+  background: #fff0e5;
+
+  top: -180px;
+  right: -150px;
+
+}
+
+
+.circle-two {
+
+  width: 320px;
+  height: 320px;
+
+  background: #fff5ed;
+
+  bottom: -150px;
+  left: -130px;
+
+}
+
+
+/* =========================================
+   CONTAINER
+   ========================================= */
+
+.container {
+
+  width: min(920px, calc(100% - 32px));
+
+  margin: 0 auto;
+
+  padding:
+    45px 0
+    60px;
+
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+
+  text-align: center;
+
+  margin-bottom: 30px;
+
+}
+
+
+.logo {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+
+}
+
+
+.logo-sp {
+
+  width: 54px;
+  height: 54px;
+
+  background: var(--orange);
+
+  color: white;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+
+  box-shadow:
+    0 10px 25px rgba(255, 106, 0, 0.18);
+
+}
+
+
+.logo-text {
+
+  text-align: left;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.logo-text strong {
+
+  font-size: 19px;
+
+  letter-spacing: 1.5px;
+
+}
+
+
+.logo-text small {
+
+  color: var(--orange);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  margin-top: 3px;
+
+}
+
+
+/* =========================================
+   ONE YEAR
+   ========================================= */
+
+.one-year {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 9px 15px;
+
+  background: #fff1e7;
+
+  border: 1px solid #ffd7bf;
+
+  border-radius: 100px;
+
+  margin-bottom: 20px;
+
+}
+
+
+.one-year > span {
+
+  color: var(--orange);
+
+  font-size: 18px;
+
+  font-weight: 900;
+
+}
+
+
+.one-year div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  text-align: left;
+
+}
+
+
+.one-year strong {
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+}
+
+
+.one-year small {
+
+  font-size: 8px;
+
+  color: var(--muted);
+
+  letter-spacing: 1px;
+
+}
+
+
+/* =========================================
+   HEADING
+   ========================================= */
+
+.hero h1 {
+
+  font-size: clamp(36px, 7vw, 66px);
+
+  line-height: 1.02;
+
+  letter-spacing: -2.8px;
+
+  margin-bottom: 22px;
+
+  font-weight: 900;
+
+}
+
+
+.hero h1 span {
+
+  color: var(--orange);
+
+}
+
+
+.hero-description {
+
+  max-width: 720px;
+
+  margin: 0 auto 12px;
+
+  color: #5d5d5d;
+
+  line-height: 1.7;
+
+  font-size: 15px;
+
+}
+
+
+.hero-description strong {
+
+  color: var(--black);
+
+}
+
+
+/* =========================================
+   ANNOUNCEMENT
+   ========================================= */
+
+.announcement {
+
+  max-width: 720px;
+
+  margin: 25px auto;
+
+  padding: 18px 20px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  text-align: left;
+
+  background: white;
+
+  border: 1px solid #ffd8c0;
+
+  border-left: 4px solid var(--orange);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.04);
+
+}
+
+
+.announcement-icon {
+
+  font-size: 25px;
+
+}
+
+
+.announcement strong {
+
+  font-size: 14px;
+
+}
+
+
+.announcement p {
+
+  margin-top: 5px;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: var(--muted);
+
+}
+
+
+.intro {
+
+  color: var(--orange);
+
+  font-weight: 700;
+
+  font-size: 14px;
+
+}
+
+
+/* =========================================
+   FORM CARD
+   ========================================= */
+
+.form-card {
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid var(--border);
+
+  border-radius: 24px;
+
+  padding: clamp(22px, 5vw, 48px);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.07);
+
+}
+
+
+/* =========================================
+   QUESTION
+   ========================================= */
+
+.question {
+
+  padding: 26px 0;
+
+  border-bottom: 1px solid #eeeeee;
+
+}
+
+
+.question:first-of-type {
+
+  padding-top: 0;
+
+}
+
+
+.question:last-of-type {
+
+  border-bottom: none;
+
+}
+
+
+.question-title {
+
+  display: block;
+
+  font-size: 15px;
+
+  line-height: 1.55;
+
+  font-weight: 750;
+
+  margin-bottom: 14px;
+
+}
+
+
+.question-title span {
+
+  color: var(--orange);
+
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+input[type="text"],
+input[type="tel"],
+textarea {
+
+  width: 100%;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  padding: 14px 15px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  color: var(--text);
+
+  outline: none;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+
+}
+
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+
+  border-color: var(--orange);
+
+  box-shadow:
+    0 0 0 3px rgba(255, 106, 0, 0.10);
+
+}
+
+
+textarea {
+
+  resize: vertical;
+
+  min-height: 110px;
+
+  line-height: 1.6;
+
+}
+
+
+::placeholder {
+
+  color: #aaa;
+
+}
+
+
+/* =========================================
+   OPTIONS
+   ========================================= */
+
+.options {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+
+}
+
+
+.inline-options {
+
+  grid-template-columns:
+    repeat(2, minmax(0, 170px));
+
+}
+
+
+.option {
+
+  position: relative;
+
+  cursor: pointer;
+
+}
+
+
+.option input {
+
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+}
+
+
+.option span {
+
+  display: block;
+
+  border: 1px solid #e2e2e2;
+
+  border-radius: 11px;
+
+  padding: 13px 14px;
+
+  font-size: 13px;
+
+  background: #fff;
+
+  transition:
+    0.2s ease;
+
+}
+
+
+.option:hover span {
+
+  border-color: #ffbf99;
+
+  background: #fffaf7;
+
+}
+
+
+.option input:checked + span {
+
+  border-color: var(--orange);
+
+  background: #fff3eb;
+
+  color: #d65300;
+
+  font-weight: 700;
+
+  box-shadow:
+    inset 0 0 0 1px var(--orange);
+
+}
+
+
+/* =========================================
+   SUBMIT
+   ========================================= */
+
+.submit-area {
+
+  padding-top: 30px;
+
+  text-align: center;
+
+}
+
+
+button {
+
+  width: 100%;
+
+  max-width: 400px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 16px 22px;
+
+  background: var(--orange);
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+
+  box-shadow:
+    0 12px 28px rgba(255, 106, 0, 0.22);
+
+}
+
+
+button:hover {
+
+  background: var(--orange-dark);
+
+  transform: translateY(-2px);
+
+}
+
+
+button:active {
+
+  transform: translateY(0);
+
+}
+
+
+button:disabled {
+
+  opacity: 0.7;
+
+  cursor: wait;
+
+  transform: none;
+
+}
+
+
+#buttonLoader {
+
+  display: none;
+
+}
+
+
+.privacy-note {
+
+  margin-top: 12px;
+
+  font-size: 11px;
+
+  color: #999;
+
+}
+
+
+/* =========================================
+   SUCCESS
+   ========================================= */
+
+.success-message {
+
+  display: none;
+
+  text-align: center;
+
+  padding: 50px 15px;
+
+}
+
+
+.success-icon {
+
+  width: 72px;
+  height: 72px;
+
+  border-radius: 50%;
+
+  background: #fff0e5;
+
+  color: var(--orange);
+
+  border: 2px solid #ffd0b2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 20px;
+
+  font-size: 32px;
+
+  font-weight: 900;
+
+}
+
+
+.success-message h2 {
+
+  font-size: 32px;
+
+  margin-bottom: 10px;
+
+}
+
+
+.success-message p {
+
+  color: var(--muted);
+
+  line-height: 1.6;
+
+}
+
+
+.success-small {
+
+  margin-top: 25px;
+
+  font-size: 13px;
+
+  color: #888;
+
+}
+
+
+.success-small strong {
+
+  color: var(--orange);
+
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding-top: 25px;
+
+  font-size: 12px;
+
+  color: #888;
+
+}
+
+
+footer strong {
+
+  color: var(--black);
+
+}
+
+
+/* =========================================
+   HONEYPOT
+   ========================================= */
+
+.honeypot {
+
+  position: absolute !important;
+
+  left: -9999px !important;
+
+  width: 1px !important;
+
+  height: 1px !important;
+
+  overflow: hidden !important;
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .container {
+
+    width: min(
+      100% - 20px,
+      920px
+    );
+
+    padding-top: 25px;
+
+  }
+
+
+  .hero h1 {
+
+    letter-spacing: -1.8px;
+
+  }
+
+
+  .hero-description {
+
+    font-size: 14px;
+
+  }
+
+
+  .form-card {
+
+    border-radius: 18px;
+
+    padding:
+      22px 18px;
+
+  }
+
+
+  .options {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .inline-options {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .announcement {
+
+    padding: 15px;
+
+  }
+
+
+  .logo {
+
+    margin-bottom: 22px;
+
+  }
+
+
+  footer {
+
+    flex-direction: column;
+
+    gap: 4px;
+
+  }
+
+}
