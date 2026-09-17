@@ -1,23 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("feedbackForm");
-  const iframe = document.getElementById("hidden_iframe");
-
   const submitButton = document.getElementById("submitButton");
   const buttonText = document.getElementById("buttonText");
   const buttonLoader = document.getElementById("buttonLoader");
-  const successMessage = document.getElementById("successMessage");
 
   const phoneInput = document.querySelector('input[name="phone"]');
 
-  let formSubmitted = false;
 
-
-  /* ================================
-     PHONE INPUT
-     ================================ */
+  /* PHONE INPUT */
 
   if (phoneInput) {
+
     phoneInput.addEventListener("input", function () {
 
       this.value = this.value.replace(
@@ -26,62 +20,20 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
     });
-  }
-
-
-  /* ================================
-     FORM SUBMISSION
-     ================================ */
-
-  if (form) {
-
-    form.addEventListener("submit", function (event) {
-
-      // Let the browser perform the normal POST
-      // Do NOT use preventDefault()
-
-      formSubmitted = true;
-
-      submitButton.disabled = true;
-
-      buttonText.style.display = "none";
-      buttonLoader.style.display = "inline";
-
-    });
 
   }
 
 
-  /* ================================
-     GOOGLE APPS SCRIPT RESPONSE
-     ================================ */
+  /* FORM SUBMIT */
 
-  if (iframe) {
+  form.addEventListener("submit", function () {
 
-    iframe.addEventListener("load", function () {
+    submitButton.disabled = true;
 
-      if (!formSubmitted) {
-        return;
-      }
+    buttonText.style.display = "none";
 
-      formSubmitted = false;
+    buttonLoader.style.display = "inline";
 
-      // Small delay to allow Apps Script to finish
-      setTimeout(function () {
-
-        form.style.display = "none";
-
-        successMessage.style.display = "block";
-
-        successMessage.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-
-      }, 800);
-
-    });
-
-  }
+  });
 
 });
