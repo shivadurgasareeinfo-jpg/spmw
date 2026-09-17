@@ -1,101 +1,87 @@
-/* =========================================
-   SP MEDIA WORKS FEEDBACK
-   ========================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-const form =
-  document.getElementById("feedbackForm");
+  const form = document.getElementById("feedbackForm");
+  const iframe = document.getElementById("hidden_iframe");
 
-const iframe =
-  document.getElementById("hidden_iframe");
+  const submitButton = document.getElementById("submitButton");
+  const buttonText = document.getElementById("buttonText");
+  const buttonLoader = document.getElementById("buttonLoader");
+  const successMessage = document.getElementById("successMessage");
 
-const submitButton =
-  document.getElementById("submitButton");
+  const phoneInput = document.querySelector('input[name="phone"]');
 
-const buttonText =
-  document.getElementById("buttonText");
-
-const buttonLoader =
-  document.getElementById("buttonLoader");
-
-const successMessage =
-  document.getElementById("successMessage");
+  let formSubmitted = false;
 
 
-let formSubmitted = false;
+  /* ================================
+     PHONE INPUT
+     ================================ */
 
+  if (phoneInput) {
+    phoneInput.addEventListener("input", function () {
 
-/* =========================================
-   FORM SUBMIT
-   ========================================= */
+      this.value = this.value.replace(
+        /[^0-9+\-\s()]/g,
+        ""
+      );
 
-form.addEventListener("submit", function () {
-
-  formSubmitted = true;
-
-
-  // Show loading
-  submitButton.disabled = true;
-
-  buttonText.style.display = "none";
-
-  buttonLoader.style.display = "inline";
-
-
-});
-
-
-/* =========================================
-   GOOGLE APPS SCRIPT RESPONSE
-   ========================================= */
-
-iframe.addEventListener("load", function () {
-
-  // Ignore initial iframe loading
-  if (!formSubmitted) {
-    return;
+    });
   }
 
 
-  formSubmitted = false;
+  /* ================================
+     FORM SUBMISSION
+     ================================ */
+
+  if (form) {
+
+    form.addEventListener("submit", function (event) {
+
+      // Let the browser perform the normal POST
+      // Do NOT use preventDefault()
+
+      formSubmitted = true;
+
+      submitButton.disabled = true;
+
+      buttonText.style.display = "none";
+      buttonLoader.style.display = "inline";
+
+    });
+
+  }
 
 
-  // Hide form
-  form.style.display = "none";
+  /* ================================
+     GOOGLE APPS SCRIPT RESPONSE
+     ================================ */
 
+  if (iframe) {
 
-  // Show success
-  successMessage.style.display = "block";
+    iframe.addEventListener("load", function () {
 
+      if (!formSubmitted) {
+        return;
+      }
 
-  // Scroll to success message
-  successMessage.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
+      formSubmitted = false;
 
+      // Small delay to allow Apps Script to finish
+      setTimeout(function () {
+
+        form.style.display = "none";
+
+        successMessage.style.display = "block";
+
+        successMessage.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+      }, 800);
+
+    });
+
+  }
 
 });
-
-
-/* =========================================
-   PHONE VALIDATION
-   ========================================= */
-
-const phoneInput =
-  document.querySelector(
-    'input[name="phone"]'
-  );
-
-
-const phoneInput =
-  document.querySelector('input[name="phone"]');
-
-if (phoneInput) {
-  phoneInput.addEventListener("input", function () {
-    this.value = this.value.replace(
-      /[^0-9+\-\s()]/g,
-      ""
-    );
-  });
-}
-);
