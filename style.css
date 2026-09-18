@@ -915,3 +915,10 @@ footer strong {
   }
 
 }
+.brand-logo {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
